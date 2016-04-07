@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# GPG script to encrypt a file with our best settings.
+#
+# Example:
+#
+#     $ gpg-encrypt foo.txt
+#     (prompt for password)
+#     (prompt for password again)
+#     #=> foo.txt.gpg
+#
+# Settings:
+#
+#    * Symmetric encryption, i.e. we use the same password for encryption and decryption.
+#      We choose this because our users can understand symmetric more easily than asymmetic.
+#
+#    * Encryption using the aes256 cipher algorithm.
+#      We choose this because it's a good balance of strong and portable.
+#
+#    * digesting using the sha256 digest algorithm.
+#      We choose this because it's a good balance of strong and portable.
+#
+#    * No compression, because typically our files are small or already compressed.
+#      We choose this to maximize portability, PGP compatibility, and speed.
+#
+# To get our settings, we use these gpg options:
+#
+#    --quiet                       Try to be as quiet as possible.
+#    --no-greeting                 Suppress the initial copyright message but do not enter batch mode.
+#    --symmetric                   Encrypt with symmetric cipher only This command asks for a passphrase.
+#    --cipher-algo aes256          Use AES256 as the cipher algorithm
+#    --digest-algo sha256          Use SHA256 as the digest algorithm.
+#    --cert-digest-algo sha256     Use SHA256 as the message digest algorithm used when signing a key.
+#    --compress-algo none          Do not compress the file.
+#    -z 0                          Compression level set to 0, i.e. set to no compression.
+#    --no-use-agent                Do not use a system agent such as Ubuntu's gnome-keyring process.
+#
+# Command: gpg-encrypt
+# Version: 2.0.0
+# Created: 2010-05-20
+# Updated: 2016-04-06
+# License: GPL
+# Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
+##
+set -euf
+gpg --quiet --no-greeting --symmetric --cipher-algo aes256 --digest-algo sha256 --cert-digest-algo sha256 -z 0 --compress-algo none --no-use-agent "$@"
