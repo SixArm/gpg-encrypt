@@ -43,4 +43,4 @@
 # Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 ##
 set -euf
-gpg --quiet --no-greeting --symmetric --cipher-algo aes256 --digest-algo sha256 --cert-digest-algo sha256 -z 0 --compress-algo none --no-use-agent "$@"
+gpg --symmetric --cipher-algo aes256 --digest-algo sha256 --cert-digest-algo sha256 -z 0 --compress-algo none --quiet --no-greeting --no-use-agent "$@"
