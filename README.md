@@ -3,7 +3,7 @@
 Syntax:
 
     gpg-encrypt <file>
-    
+
 Example:
 
     $ gpg-encrypt example.txt
@@ -32,3 +32,14 @@ Also see our `gpg-decrypt` command to decrypt a file using our best settings.
   * No compression, because typically our files are small or already compressed.
     We choose this to maximize portability, PGP compatibility, and speed.
 
+## Command
+
+The command is:
+
+    gpg --symmetric \
+    --cipher-algo aes256 \
+    --digest-algo sha256 \
+    --cert-digest-algo sha256 \
+    --compress-algo none -z 0 \
+    --quiet --no-greeting \
+    --no-use-agent "$@"
