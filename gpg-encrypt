@@ -6,7 +6,6 @@
 #
 #     $ gpg-encrypt foo.txt
 #     (prompt for password)
-#     (prompt for password again)
 #     #=> foo.txt.gpg
 #
 # Settings:
@@ -23,24 +22,32 @@
 #    * No compression, because typically our files are small or already compressed.
 #      We choose this to maximize portability, PGP compatibility, and speed.
 #
+#    * Explicit settings, rather than depending on defaults.
+#
+#    * Suitable for GPG v2; backwards-compatible with GPG v1 when possible.
+#
 # To get our settings, we use these gpg options:
 #
-#    --quiet                       Try to be as quiet as possible.
-#    --no-greeting                 Suppress the initial copyright message but do not enter batch mode.
 #    --symmetric                   Encrypt with symmetric cipher only This command asks for a passphrase.
 #    --cipher-algo aes256          Use AES256 as the cipher algorithm
 #    --digest-algo sha256          Use SHA256 as the digest algorithm.
 #    --cert-digest-algo sha256     Use SHA256 as the message digest algorithm used when signing a key.
-#    --compress-algo none          Do not compress the file.
-#    -z 0                          Compression level set to 0, i.e. set to no compression.
-#    --no-use-agent                Do not use a system agent such as Ubuntu's gnome-keyring process.
+#    --compress-algo none -z 0     Do not compress the file.
+#    --quiet                       Try to be as quiet as possible.
+#    --no-greeting                 Suppress the initial copyright message but do not enter batch mode.
 #
 # Command: gpg-encrypt
-# Version: 2.0.0
+# Version: 2.0.2
 # Created: 2010-05-20
-# Updated: 2016-04-06
+# Updated: 2011-01-12
 # License: GPL
 # Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 ##
-set -euf
-gpg --symmetric --cipher-algo aes256 --digest-algo sha256 --cert-digest-algo sha256 -z 0 --compress-algo none --quiet --no-greeting "$@"
+set -eu
+gpg --symmetric \
+    --cipher-algo aes256 \
+    --digest-algo sha256 \
+    --cert-digest-algo sha256 \
+    --compress-algo none -z 0 \
+    --quiet --no-greeting \
+    "$@"
