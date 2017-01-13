@@ -53,3 +53,28 @@ The command is:
 If you use GPG v1, and you want to skip the GPG user agent, then you may want to add this option:
 
     --no-use-agent
+
+
+## Alternatives
+
+Here's an alternative to wrapping GPG, using .gnupg/gpg.conf:
+
+    personal-cipher-preferences AES256 AES
+    personal-digest-preferences SHA256 SHA512
+    personal-compress-preferences Uncompressed
+    default-preference-list SHA256 SHA512 AES256 AES Uncompressed
+
+    cert-digest-algo SHA256
+
+    s2k-cipher-algo AES256
+    s2k-digest-algo SHA256
+    s2k-mode 3
+    s2k-count 65011712
+
+    disable-cipher-algo 3DES
+    weak-digest SHA1
+    force-mdc
+
+Note that these options impact compatibility with other GPG/PGP clients.
+
+Credit: User twr at https://news.ycombinator.com/item?id=13382734
