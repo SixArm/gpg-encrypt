@@ -8,7 +8,18 @@
 #     (prompt for password)
 #     #=> foo.txt.gpg
 #
-# Settings:
+#
+# ## Related
+#
+# These commands are related:
+#
+#   * `gpg-encrypt`: encrypt a file using our best settings.
+#  
+#   * `gpg-decrypt`: decrypt a file using our best settings.
+#
+#   * `gpg-decrypt-solo`: decrypt a file using our best settings, with no agent.
+#
+# ## Settings
 #
 #    * Symmetric encryption, i.e. we use the same password for encryption and decryption.
 #      We choose this because our users can understand symmetric more easily than asymmetic.
@@ -40,12 +51,15 @@
 #    --quiet                       Try to be as quiet as possible.
 #    --no-greeting                 Suppress the initial copyright message but do not enter batch mode.
 #
-# Command: gpg-encrypt
-# Version: 2.1.0
-# Created: 2010-05-20
-# Updated: 2011-01-12
-# License: GPL
-# Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
+#
+# ## Tracking
+#
+#   * Command: gpg-encrypt
+#   * Version: 3.0.0
+#   * Created: 2010-05-20
+#   * Updated: 2017-09-03
+#   * License: GPL
+#   * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
 ##
 set -eu
 gpg --symmetric \

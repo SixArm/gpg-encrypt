@@ -16,7 +16,17 @@ To decrypt the file:
 
     gpg -d example.txt.gpg
 
-Also see our `gpg-decrypt` command to decrypt a file using our best settings.
+
+## Related
+
+These commands are related:
+
+  * `gpg-encrypt`: encrypt a file using our best settings.
+  
+  * `gpg-decrypt`: decrypt a file using our best settings.
+
+  * `gpg-decrypt-solo`: decrypt a file using our best settings, with no agent.
+
 
 ## Settings
 
@@ -96,3 +106,13 @@ A. These options are good for GPG v1 a.k.a. GPGP classic. GPG v1 has stranger de
 ## Thanks
 
 Thanks for all the comments on [Hacker News](https://news.ycombinator.com/item?id=13382734), with special thanks to users [vesinisa](https://news.ycombinator.com/user?id=vesinisa), [twr](https://news.ycombinator.com/user?id=twr), [tptacek](https://news.ycombinator.com/user?id=tptacek), [txtutu](https://news.ycombinator.com/user?id=txutxu), [acqq](https://news.ycombinator.com/user?id=acqq), [throwawayish](https://news.ycombinator.com/user?id=throwawayish), [RMarcus](https://news.ycombinator.com/user?id=RMarcus)
+
+
+## Tracking
+
+  * Command: gpg-encrypt
+  * Version: 3.0.0
+  * Created: 2010-05-20
+  * Updated: 2017-09-04
+  * License: GPL
+  * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
