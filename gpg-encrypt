@@ -2,22 +2,22 @@
 #
 # GPG script to encrypt a file with our best settings.
 #
+# Syntax:
+#
+#     gpg-encrypt <file>
+#
 # Example:
 #
 #     $ gpg-encrypt foo.txt
-#     (prompt for password)
-#     #=> foo.txt.gpg
 #
+# Output is a new encrypted file:
 #
-# ## Related
+#     foo.txt.gpg
 #
-# These commands are related:
+# To decrypt the file:
 #
-#   * `gpg-encrypt`: encrypt a file using our best settings.
-#  
-#   * `gpg-decrypt`: decrypt a file using our best settings.
+#     $ gpg-decrypt example.txt.aes
 #
-#   * `gpg-decrypt-solo`: decrypt a file using our best settings, with no agent.
 #
 # ## Settings
 #
@@ -50,6 +50,23 @@
 #    --force-mdc                   Use modification detection code.
 #    --quiet                       Try to be as quiet as possible.
 #    --no-greeting                 Suppress the initial copyright message but do not enter batch mode.
+#
+#
+# ## See also
+# 
+# These commands are similar:
+# 
+#   * [`gpg-encrypt`](https://github.com/SixArm/gpg-encrypt): 
+#     use GPG to encrypt a file using our best settings.
+#   
+#   * [`gpg-decrypt`](https://github.com/SixArm/gpg-decrypt): 
+#     use GPG to decrypt a file using our best settings.
+#
+#   * [`openssl-encrypt`](https://github.com/SixArm/openssl-encrypt): 
+#     use OpenSLL to encrypt a file using our best settings.
+#   
+#   * [`openssl-decrypt`](https://github.com/SixArm/openssl-decrypt): 
+#     use OpenSSL to decrypt a file using our best settings.
 #
 #
 # ## Tracking
