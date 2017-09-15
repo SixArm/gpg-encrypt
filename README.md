@@ -1,6 +1,6 @@
 # gpg-encrypt:<br>encrypt a file using our best settings
 
-<img src="README.png" alt="GnuPG" width="356" height="120"/>
+<img src="README.png" alt="GnuPG" width="450" height="153"/>
 
 Syntax:
 
