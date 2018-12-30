@@ -160,7 +160,8 @@
 #   * Tracker: 064750fa2efe1ca54b518a2ba8b4c34e
 ##
 set -eu
-gpg --symmetric \
+gpg \
+    --symmetric \
     --cipher-algo aes256 \
     --digest-algo sha256 \
     --cert-digest-algo sha256 \

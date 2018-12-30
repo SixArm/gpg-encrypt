@@ -164,6 +164,7 @@ The command is:
     --s2k-count 65011712 \
     --force-mdc \
     --quiet --no-greeting \
+    --pinentry-mode=loopback \
     "$@"
 
 
