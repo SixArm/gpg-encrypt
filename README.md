@@ -213,8 +213,11 @@ Thanks for all the comments on [Hacker News](https://news.ycombinator.com/item?i
 ## Tracking
 
   * Command: gpg-encrypt
+  * Website: https://sixarm.com/gpg-encrypt
+  * Cloning: https://github.com/sixarm/gpg-encrypt
   * Version: 4.0.0
   * Created: 2010-05-20
   * Updated: 2018-11-01
   * License: GPL
   * Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
+  * Tracker: 064750fa2efe1ca54b518a2ba8b4c34e
