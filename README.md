@@ -55,6 +55,8 @@ To get our settings, we use these gpg options:
 
   * `--s2k-count 65011712`:          Use the maximum number of passphrase iterations.
 
+  * `--no-symkey-cache`:             Disable the passphrase cache.
+
   * `--force-mdc`:                   Use modification detection code.
 
   * `--quiet`:                       Try to be as quiet as possible.
@@ -162,6 +164,7 @@ The command is:
     --s2k-mode 3 \
     --s2k-digest-algo sha256 \
     --s2k-count 65011712 \
+    --no-symkey-cache \
     --force-mdc \
     --quiet --no-greeting \
     --pinentry-mode=loopback \
